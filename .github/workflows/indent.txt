@@ -1,0 +1,47 @@
+# From ChatGpt
+name: Testing
+on: push
+
+jobs:
+  test_project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12.2' # Specify your Python version
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install django
+
+      - name: Run Django unit tests
+        run: |
+          python manage.py test
+
+# From Demo
+name: Testing
+on: push
+
+jobs:
+  test_project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12.2' # Specify your Python version
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install django
+
+      - name: Run Django unit tests
+        run: |
+          python manage.py test
